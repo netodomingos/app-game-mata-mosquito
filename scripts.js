@@ -31,5 +31,17 @@ const positionRandom = () => {
     mosca.style.top = positionHeight + 'px'
 
 
-    document.body.appendChild(mosca)
+// Gerando tamanhos aleatórios para o mosquito
+const randomSize = () => {
+    let classe = Math.floor(Math.random() * 3)
+
+    if (classe === 0) {
+        return 'mosquito-size1'
+    }
+    else if (classe === 1) {
+        return 'mosquito-size2'
+    }
+    else {
+        return 'mosquito-size3'
+    }
 }
