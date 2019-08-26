@@ -5,16 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="./scripts.js"></script>
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <script>
+        const iniciarJogo = () => {
+            let nivel = document.getElementById('nivel').value
+
+            if (nivel === '') {
+                alert('Selecione um nivel para iniciar o jogo')
+                return false
+            }
+            window.location.href = "app.html?" + nivel
+        }
+    </script>
 </head>
 
-<body onresize="adjustScreenGame()">
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <img src="imagens/game.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <div class="mb-2">
+                        <select class="form-control" id="nivel">
+                            <option value="">-- selecione o nível --</option>
+                            <option value="normal">Normal</option>
+                            <option value="dificil">Dificil</option>
+                            <option value="horaDoShow">Hora do Show !!</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script>
-        positionRandom()
-    </script>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-danger btn-lg" onclick="iniciarJogo()">Inicar Jogo!</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
